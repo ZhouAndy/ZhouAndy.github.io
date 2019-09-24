@@ -20,6 +20,8 @@ body {
 	width: 450px;
 	margin-left: 32px;
 	margin-top: 10px;
+	border-style:ridge;
+	border-width: thin;
 }
 
 .artist {

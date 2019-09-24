@@ -16,6 +16,10 @@ body {
 	font-size: 20px;
 }
 
+#parent {
+	font-family: verdana;
+}
+
 .search {
 	width: 450px;
 	margin-left: 32px;
@@ -37,7 +41,7 @@ body {
 }
 
 .school {
-	font-size: 13px;
+	font-size: 12px;
 }
 
 .photo {
@@ -50,7 +54,7 @@ body {
 }
 
 .name {
-	padding-top: 15px;
+	padding-top: 14px;
 	font-weight: bold;
 	height: 3px;
 	

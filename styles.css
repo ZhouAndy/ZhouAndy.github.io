@@ -1,0 +1,56 @@
+body {
+	font-family: arial;
+}
+
+#directoryContainer {
+	border-style: ridge;
+	width: 520px;
+	height: 120px;
+	margin: 0 auto;
+	border-width:thin;
+}
+
+#directoryTitle {
+	font-weight:bold;
+	margin-left: 32px;
+	font-size: 20px;
+}
+
+.search {
+	width: 450px;
+	margin-left: 32px;
+	margin-top: 10px;
+}
+
+.artist {
+	margin: 0 auto;
+	border-style: ridge;
+	height: 100px;
+	width: 400px;
+	border-width:thin;
+}
+
+.artist:hover {
+	background: #EBEEEC;
+}
+
+.school {
+	font-size: 13px;
+}
+
+.photo {
+	display: block;
+	float: left;
+	padding: 0px 20px 0 0;
+	height: 50px;	
+	margin-left: 20px;
+	width: 60px;
+}
+
+.name {
+	padding-top: 15px;
+	font-weight: bold;
+	height: 3px;
+	
+}
+

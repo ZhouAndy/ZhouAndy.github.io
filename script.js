@@ -1,5 +1,12 @@
 function showForm() {
-	document.getElementById('artistForm').style.display = "block";
+	var x = document.getElementById('artistForm');
+	var display = x.style.display;
+	if (display == "none" || display == "") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+	
 }
 
 function addArtist() {
@@ -44,6 +51,6 @@ function addArtist() {
 	artistDiv.appendChild(aboutPara);
 	document.getElementById("parent").appendChild(artistDiv);
 	
-	
-	
+	artistForm.reset();
+	artistForm.style.display = "none";
 }

@@ -14,13 +14,18 @@ body {
 	border: none;
 	width: 100px;
 	height: 35px;
-	float: right;
-	margin-right: 30px;
+}
+
+#searchButton {
+	border: none;
+	height: 35px;
+	width: 60px;
+	margin-right: 25px;
 }
 
 #directoryContainer {
 	border-style: ridge;
-	width: 640px;
+	width: 680px;
 	height: 120px;
 	margin: 0 auto;
 	border-width:thin;
@@ -63,14 +68,16 @@ body {
 	border-style: none;
 }
 
-.search {
-	width: 450px;
+#searchInput {
+	width: 400px;
 	height: 20px;
 	margin-left: 32px;
 	margin-top: 10px;
 	border-style:ridge;
 	border-width: thin;
 }
+
+
 
 .artist {
 	margin: 0 auto;

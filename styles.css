@@ -12,14 +12,14 @@ body {
 
 #addArtist {
 	border: none;
-	width: 100px;
+	width: 50px;
 	height: 35px;
 }
 
 #searchButton {
 	border: none;
 	height: 35px;
-	width: 60px;
+	width: 65px;
 	margin-right: 25px;
 }
 

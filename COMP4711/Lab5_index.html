@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>COMP 4711 Lab 5</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="script.js" defer></script>
+	</head>
+	<body onload="onloadFunction()">
+		<div id="directoryContainer">
+			<p id="directoryTitle">Artist Directory</p>
+			<input type ="text" id="searchInput"></input>
+			<button id="addArtist" type="button" onclick="showForm()">Add</button>
+			<button id="searchButton" type="button" onclick="findArtist()">Search</button>
+		</div>
+		<form id="artistForm" action='/submit' method="POST">
+			<input type="text" placeholder="Artist Name" name='name' maxlength="40"></input>
+			<input type="text" placeholder="About Artist" name ='about' maxlength="40"></input>
+			<input type="text" placeholder="Image url" name='url'></input>
+			<button id="add" type="button" onclick="addArtist()">Add</button>
+		</form>
+		<div id="parent">
+		</div>
+	</body>
+</html>

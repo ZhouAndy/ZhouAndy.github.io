@@ -1,0 +1,111 @@
+body {
+	font-family: arial;
+}
+
+#add {
+	border: none;
+	width: 150px;
+	height: 35px;	
+	display: block;
+	margin: 0 auto;
+}
+
+#addArtist {
+	border: none;
+	width: 50px;
+	height: 35px;
+}
+
+#searchButton {
+	border: none;
+	height: 35px;
+	width: 65px;
+	margin-right: 25px;
+}
+
+#directoryContainer {
+	border-style: ridge;
+	width: 680px;
+	height: 120px;
+	margin: 0 auto;
+	border-width:thin;
+}
+
+#directoryTitle {
+	font-weight:bold;
+	margin-left: 32px;
+	font-size: 20px;
+}
+
+#parent {
+	font-family: verdana;
+}
+
+#artistForm > input {
+	width: 100%;
+	height: 120%;
+	border-style: ridge;
+	border-width: thin;
+	text-align: center;
+}
+
+#artistForm {
+	width: 400px;
+	height:20px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+	display: none;
+}
+
+#deleteButton {
+	width: 60px;
+	height: 35px;
+	background-color: red;
+	color: white;
+	float:right;
+	margin-right: 50px;
+	border-radius:8px;
+	border-style: none;
+}
+
+#searchInput {
+	width: 400px;
+	height: 20px;
+	margin-left: 32px;
+	margin-top: 10px;
+	border-style:ridge;
+	border-width: thin;
+}
+
+
+
+.artist {
+	margin: 0 auto;
+	border-style: ridge;
+	height: 100px;
+	width: 550px;
+	border-width:thin;
+}
+
+.artist:hover {
+	background: #EBEEEC;
+}
+
+.about {
+	font-size: 12px;
+}
+
+.photo {
+	display: block;
+	float: left;
+	padding: 0px 20px 0 0;
+	height: 50px;	
+	margin-left: 20px;
+	width: 60px;
+}
+
+.name {
+	font-weight: bold;
+	height: 3px;
+}
+

@@ -5,9 +5,24 @@ let bodyParser = require('body-parser');
 let fs = require('fs');
 
 let http = require('http');
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => console.log('Server ready at 3000'))
+http.createServer(function(req, res) {
+    var url = './' + (req.url == '/' ? '../COMP4711/Lab5_index.html' : req.url)
+    fs.readFile(url, function(err, html) {
+        if (err) {
+            var message404 = "There is no such page!"
+            res.writeHead(404, {'Content-Type': 'text/html', 'Content-Length': message404.length})
+            res.write(message404)
+        } else {
+            res.writeHead(200, {'Content-Type': 'text/html', 'Content-Length': html.length})
+            res.write(html)
+        }
+        res.end()
+    })
+}).listen(port)
+
+//app.listen(3000, () => console.log('Server ready at 3000'))
 
 const artistDir = './artistlist.json'
 

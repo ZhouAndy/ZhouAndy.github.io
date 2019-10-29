@@ -1,16 +1,17 @@
 async function getArtistList() {
-	const res = await fetch('/artist');
+	const res = await fetch('/artists');
 	const artistData = await res.json();
 
 	return artistData;
 }
 
 function onloadFunction() {
-	var artistString = getArtistList();
+	var artistString = [];
+	artistString = getArtistList();
 	
 	artistString.then(function(artistList) {
-		for (var artist in artistList) {
-			appendArtist(artist.name, artist.about, artist.url)
+		for (let i = 0; i < artistList.length; i++) {
+			appendArtist(artistList[i].name, artistList[i].about, artistList[i].url, artistList[i].timestamp);
 		}
 	}) 
 
@@ -33,9 +34,10 @@ function addArtist() {
 	var artistName = artistForm.elements[0].value;
 	var artistAbout = artistForm.elements[1].value;
 	var artistURL = artistForm.elements[2].value;
+	var artistTime = new Date().getTime();
 	
-	appendArtist(artistName, artistAbout, artistURL);
-	let artist = {name: artistName, about: artistAbout, url: artistURL};
+	appendArtist(artistName, artistAbout, artistURL, artistTime);
+	let artist = {name: artistName, about: artistAbout, url: artistURL, timestamp: artistTime};
 	
 	saveArtist(artist);
 	
@@ -48,18 +50,20 @@ function saveArtist(artist) {
 	const options = {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			'Accept': 'application/json'
 		},
 		body: artistJSON
 	};
 	fetch('/artistlist', options)
-	.then(res => {});
+	.then(res => {console.log(res)});
 }
 
-function appendArtist(name, about, url) {
+function appendArtist(name, about, url, timestamp) {
 	var artistDiv = document.createElement("div");
 	artistDiv.classList.add("artist");
-	
+	artistDiv.id = timestamp;
+
 	//Create <p> for artist name
 	var namePara = document.createElement("P");
 	var artistName = document.createTextNode(name);
@@ -97,20 +101,22 @@ function appendArtist(name, about, url) {
 }
 
 function deleteArtist(parentDiv) {
+	console.log(parentDiv.id);
+	var deleteStamp = {timestamp: parentDiv.id};
+	var timeJSON = JSON.stringify(deleteStamp);
 	parentDiv.remove();
-	var deleteStamp = parentDiv.id;
-	var artistString = [];
-		artistString = JSON.parse(localStorage.getItem("artists"));
-		if(!!artistString) {
-			for(i = 0; i < artistString.length; i++) {
-				if(artistString[i].timestamp == deleteStamp) {
-					artistString.splice(i,1);
-				}
-			}
-			
-		}
-	artistString = JSON.stringify(artistString);
-	localStorage.setItem("artists", artistString);
+
+	const options = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json'
+		},
+		body: timeJSON
+		
+	};
+	fetch('/deleteArtist', options)
+	.then(res => {console.log(res)});
 }
 
 function findArtist() {
